@@ -10,7 +10,7 @@ terraform {
 
 provider "azurerm" {
   features {}
-  subscription_id = "4565aeb3-4e9d-4d27-a65f-1994b2da0b15"
+  subscription_id = #
 }
 
 data "http" "my_ip" {
