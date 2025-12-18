@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vnetName": { "value": "ManufacturingVnet" },
+    "vnetAddressPrefix": { "value": "10.30.0.0/16" },
+    "subnet1Name": { "value": "SensorSubnet1" },
+    "subnet1Prefix": { "value": "10.30.20.0/24" },
+    "subnet2Name": { "value": "SensorSubnet2" },
+    "subnet2Prefix": { "value": "10.30.21.0/24" }
+  }
+}

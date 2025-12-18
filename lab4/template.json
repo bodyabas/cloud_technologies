@@ -1,0 +1,60 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vnetName": {
+      "type": "string",
+      "defaultValue": "ManufacturingVnet"
+    },
+    "vnetAddressPrefix": {
+      "type": "string",
+      "defaultValue": "10.30.0.0/16"
+    },
+    "subnet1Name": {
+      "type": "string",
+      "defaultValue": "SensorSubnet1"
+    },
+    "subnet1Prefix": {
+      "type": "string",
+      "defaultValue": "10.30.20.0/24"
+    },
+    "subnet2Name": {
+      "type": "string",
+      "defaultValue": "SensorSubnet2"
+    },
+    "subnet2Prefix": {
+      "type": "string",
+      "defaultValue": "10.30.21.0/24"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Network/virtualNetworks",
+      "apiVersion": "2021-05-01",
+      "name": "[parameters('vnetName')]",
+      "location": "eastus",
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "[parameters('vnetAddressPrefix')]"
+          ]
+        },
+        "subnets": [
+          {
+            "name": "[parameters('subnet1Name')]",
+            "properties": {
+              "addressPrefix": "[parameters('subnet1Prefix')]"
+            }
+          },
+          {
+            "name": "[parameters('subnet2Name')]",
+            "properties": {
+              "addressPrefix": "[parameters('subnet2Prefix')]"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
